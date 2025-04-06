@@ -3,8 +3,7 @@ const User=require("../models/user")
 
 //render form for signup
 module.exports.renderFormSignup=(req,res)=>{
-    // console.log("signup");
-    res.render("users/signup.ejs")
+     res.render("users/signup.ejs")
 }
 
 
@@ -37,8 +36,7 @@ module.exports.signupUser=async(req,res)=>{
 
 //render form for login
 module.exports.renderFormLogin=(req,res)=>{
-    // console.log("signup");
-    res.render("users/login.ejs")
+     res.render("users/login.ejs")
 }
 
 
