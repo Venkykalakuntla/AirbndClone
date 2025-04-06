@@ -85,7 +85,7 @@ passport.deserializeUser(User.deserializeUser());
  
 
 
-let port = 8080;
+let port =  process.env.PORT || 8080;
  
 
 app.listen(port, () => {
