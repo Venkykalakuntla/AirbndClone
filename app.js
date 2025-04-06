@@ -1,6 +1,7 @@
 require('dotenv').config();
 // console.log(process.env.SECRETE);
 // console.log("Mapbox Token from .env:", process.env.MAP_API_TOKEN);
+// console.log("mongodb url:",process.env.ATLASDB_URL)
 
 
 const express = require("express");
@@ -85,8 +86,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 let port = 8080;
-// let mongoose_url = 'mongodb://127.0.0.1:27017/wanderlust';
-
+ 
 
 app.listen(port, () => {
     console.log("app is listening at port:", port);
