@@ -42,7 +42,7 @@ const sessionOptions={
     store,
     secret:process.env.SECRETE,
     resave:false,
-    saveUninititialized:true,
+    saveUninitialized: true,
     cookie:{
         expires:Date.now()+1000*60*60*24*15,
         maxAge:1000*60*60*24*15,
