@@ -1,0 +1,230 @@
+<% layout('layouts/boilerplate') %>
+
+    <style>
+        .no-listing {
+
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+
+        }
+
+        .filters {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-wrap: nowrap;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 2rem;
+            scroll-snap-type: x mandatory;
+        }
+
+        .filterOption {
+
+            margin-top: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .filterOption:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .filters::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for clean look */
+        }
+
+        .filterOption {
+            flex: 0 0 auto;
+            margin-top: 1rem;
+            opacity: 0.8;
+            scroll-snap-align: start;
+        }
+
+        @media (min-width: 1200px) {
+            .filters {
+                flex-wrap: wrap;
+                overflow-x: visible;
+            }
+        }
+
+        .taxInfo {
+            display: none;
+        }
+
+        .form-check-input:hover {
+            cursor: pointer;
+        }
+
+        .form-outer {
+           min-width: 200px;
+            border: 1px solid black;
+            padding: 1.1rem;
+            border-radius: 1.5rem;
+            margin-left: 3rem;
+        }
+
+        .search-filter {
+            opacity: 0.8;
+        }
+    </style>
+    <div class="filters offset-1">
+
+
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/room">
+                <i class="fa-solid fa-house-chimney"></i>
+                <p>
+                    Rooms
+                </p>
+            </a>
+        </div>
+        <div class="rooms filterOption">
+            <a class="search-filter" href="/listings/search/trending">
+                <i class="fa-solid fa-fire"></i>
+                <p>
+                    Trending
+                </p>
+            </a>
+
+        </div>
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/city">
+                <i class="fa-solid fa-mountain-city"></i>
+                <p>
+                    City
+                </p>
+            </a>
+
+
+        </div>
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/castle">
+                <i class="fa-brands fa-fort-awesome"></i>
+                <p>
+                    Castle
+                </p>
+            </a>
+        </div>
+        <div class="rooms filterOption">
+            <a class="search-filter" href="/listings/search/mountain">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <p>
+                    Mountains
+                </p>
+            </a>
+
+        </div>
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/pool">
+                <i class="fa-solid fa-water-ladder"></i>
+                <p>
+                    Pools
+                </p>
+            </a>
+        </div>
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/snow">
+                <i class="fa-solid fa-igloo"></i>
+                <p>
+                    Snow
+                </p>
+            </a>
+
+
+        </div>
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/camping">
+                <i class="fa-solid fa-tents"></i>
+                <p>
+                    Camping
+                </p>
+            </a>
+        </div>
+
+
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/lake">
+                <i class="fa-solid fa-water"></i>
+                <p>
+                    Lake
+                </p>
+            </a>
+
+
+        </div>
+
+        <div class="rooms filterOption">
+
+            <a class="search-filter" href="/listings/search/beach">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <p>
+                    Beach
+                </p>
+            </a>
+
+
+        </div>
+        <div class="form-outer">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                <label class="form-check-label" for="switchCheckDefault">Price after taxes</label>
+            </div>
+        </div>
+
+    </div>
+
+    <body class="indexBody">
+
+        <div class="row row-cols-lg-3  row-cols-md-2 row-cols-sm-1 listingContainer">
+            <% if(allListings.length>0) {%>
+                <% for(let listing of allListings){ %>
+                    <div class="card listing-card" style="width: 18rem;">
+                        <a href="/listings/<%= listing.id %>">
+                            <img src="<%= listing.image.url %>" class="card-img-top" alt="image" width="400px"
+                                height="300px">
+                            <div class="card-body">
+                                <p class="card-text"> <b>
+                                        <%= listing.title %>
+                                    </b>
+                                </p>
+                                &#8377; <%= listing.price.toLocaleString("en-IN") %>/night &nbsp;<span
+                                        class="taxInfo">+18%GST</span>
+                            </div>
+                        </a>
+                    </div>
+                    </a>
+                    <% } %>
+                        <% } else{%>
+                            <h1 class="no-listing">No listing availabe </h1>
+                            <% } %>
+
+        </div>
+        <!-- <a href="/listings/new" class="newListing">Create Listing</a> -->
+    </body>
+
+    <Script>
+        let taxSwitch = document.querySelector(".form-check-input")
+        taxSwitch.addEventListener("click", () => {
+
+            let taxInfo = document.getElementsByClassName("taxInfo")
+
+            for (info of taxInfo) {
+                if (info.style.display != "inline")
+                    info.style.display = "inline";
+                else
+                    info.style.display = "none";
+
+            }
+        })
+
+    </Script>

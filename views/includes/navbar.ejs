@@ -1,0 +1,73 @@
+<style>
+ 
+ .search{
+  display: flex;
+  align-items: center;
+  flex: 1;
+ }
+ .search-outer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+  }
+ 
+ .search-bar{
+  border-radius: 3rem;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+ }
+ .search-btn{
+  border-radius: 3rem;
+ border: none; 
+ 
+ padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+ background-color: #fe424d !important;
+   
+  color: white;
+ 
+
+ }
+ .navele{
+
+  justify-content: flex-end;
+  flex-shrink: 0;
+ }
+
+ 
+</style>
+<nav class="navbar navbar-expand-sm bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+
+    <div class="search">
+  
+        <form  class="search-outer" method="post" action="/listings/searchByPlace" >
+          <input class="form-control me-2 search-bar" type="text" placeholder="Search by place" name="place">
+          <button class="search-btn" type="submit">Search</button>
+        </form>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse  navele" id="navbarNavAltMarkup" >
+       
+
+
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Home</a>
+        <a class="nav-link" href="/listings/new">New Listing</a>
+        <% if(!currUser) {%>
+          <a class="nav-link active" aria-current="page" href="/user/signup">Sign Up</a>
+          <a class="nav-link" href="/user/login">Login</a>
+          <% } if(currUser) { %>
+            <a class="nav-link" href="/user/logout">Logout</a>
+            <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

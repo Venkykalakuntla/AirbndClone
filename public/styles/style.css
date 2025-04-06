@@ -1,0 +1,144 @@
+
+.navbar{
+height:5rem;
+}
+.fa-compass{
+  color: #fe424d;
+  font-size: 2rem;
+}
+.nav-link{
+color: #222222 !important;
+font-weight: 600;
+}
+a{
+text-decoration: none;
+color: black;
+}
+footer{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 6rem;
+  background-color: rgb(215, 210, 210);
+}
+.f-info{
+  width: 100%;
+}
+.f-info-socials{
+  width: 100%;
+  display: flex;
+  gap: 1.3rem;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+
+}
+.f-info-links{
+  width: 100%;
+}
+.f-info-links a:hover
+{
+  text-decoration: underline;
+}
+/* .footerContainer{
+
+  position: relative;
+  bottom: 0;
+} */
+.listingContainer{
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap;
+       }
+.card-img-top{
+border-radius: 1rem !important;
+object-fit: cover;
+ }
+.listing-card{
+  border: none !important;
+  margin-bottom: 1.5rem;
+ }
+
+ .outerContainer{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+   }
+ .newListingContainer
+ {
+  width: 70%;
+  text-align: start;
+  font-weight: 600;
+ }
+ .btn{
+
+  background-color: #fe424d !important;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 2rem;
+ }
+ .heading{
+  text-align: center !important;
+  margin-top: 1rem;
+  margin-bottom:1rem;
+ }
+
+.showContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem 2rem;
+}
+.showImage{
+  height: 50vh;
+  margin-bottom: 2rem;
+}
+
+.indexBody{
+  overflow-x: hidden;
+}
+.navbar-collapse
+{
+  background-color: white;
+}
+.priceLocation{
+  display: flex;
+  gap: 2rem;
+}
+/* footer{
+  position:relative !important;
+  bottom: 0;
+    width: 100% !important;
+} */
+.alert{
+  width: 60rem;
+  height: 5rem;
+}
+
+.editDelete{
+  display: flex;
+  gap: 2rem;
+}
+
+.alert-dismissible{
+  
+  position: fixed;
+  top: 6rem;
+  right: 1rem;
+  z-index: 5;
+  height: 4rem;
+}
+  
+  
+  /* map styling */
+
+#map{
+      height: 500px;
+      width: 500px;
+  }

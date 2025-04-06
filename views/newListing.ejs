@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate') %>
+
+  
+        <div class="outerContainer">
+            <div class="newListingContainer">
+                <h1>Create your Listing</h1>
+                <form method="post" action="/listings"  class="needs-validation"  novalidate enctype="multipart/form-data">
+                    <div><label for="title" class="form-label"></label>
+
+                        <input type="text" name="title" class="form-control" placeholder="Enter Title" required>
+                        <div class="invalid-feedback">Please Enter Title</div>
+
+                    </div>
+                    <div> <label for="description" class="form-label"></label>
+                        <textarea name="description" id="" placeholder="Enter Description"
+                            class="form-control" required></textarea>
+                            <div class="invalid-feedback">Please Enter description</div>
+                            <div class="valid-feedback">Looks Good</div>
+
+
+                    </div>
+
+                    <div>
+        
+                        <div>
+                            <label for="image" class="form-label" >Upload Image</label>
+                            <input type="file" name="image" class="form-control" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="priceLocation">
+                    <div>
+                        <label for="price" class="form-label"></label>
+                        <input type="text" name="price" class="form-control" placeholder="price" required>
+                        <div class="invalid-feedback">Please Enter Valid Price</div>
+                    </div>
+                    <div>
+                        <label for="location" class="form-label"></label>
+                        <input type="text" name="location" class="form-control" placeholder="location" required>
+                        <div class="invalid-feedback">Please Enter location</div>
+
+                    </div>
+                </div>
+                
+                    <div>
+                        <label for="country" class="form-label"></label>
+                        <input type="text" name="country" class="form-control" placeholder="country" required>
+                        <div class="invalid-feedback">Please Enter country</div>
+
+                    </div>
+                    <br>
+                    <button class="btn" type="submit">Create</button>
+                </form>
+            </div>
+        </div>

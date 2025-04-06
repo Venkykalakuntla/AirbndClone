@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %>
+
+
+    <div class="outerContainer">
+        <div class="newListingContainer">
+            <h1>Edit Listing</h1>
+
+            <form method="post" action="/listings/<%= list.id %>?_method=PATCH" class="needs-validation" novalidate enctype="multipart/form-data">
+
+                <div><label for="title" class="form-label"></label>
+
+                    Title<input type="text" name="title" value="<%= list.title %>" class="form-control" required>
+                    <div class="invalid-feedback">Please Enter Title</div>
+
+                </div>
+                <br>
+                <div>
+                    <label for="description" class="form-label"></label>
+
+                    Description <textarea name="description" id="" class="form-control"
+                        required><%= list.description %></textarea>
+                    <div class="invalid-feedback">Please Enter description</div>
+
+                </div>
+                <br>
+                <div>
+                    <img src=<%=originalUrl %> alt="">
+                </div>
+                <div><label for="image" class="form-label"></label>
+                   Choose Image<input type="file" name="image"  class="form-control" >
+                </div>
+                <br>
+                <div class="priceLocation">
+                    <div><label for="price" class="form-label"></label>
+                        price<input type="text" name="price" value="<%= list.price %>" class="form-control" required
+                            type="number">
+                        <div class="invalid-feedback">Please Enter Valid Price</div>
+
+                    </div>
+                    <br>
+                    <div><label for="location" class="form-label"></label>
+                        Location<input type="text" name="location" value="<%= list.location %>" class="form-control"
+                            required>
+                        <div class="invalid-feedback">Please Enter location</div>
+
+                    </div>
+                </div>
+                <br>
+                <div><label for="country" class="form-label"></label>
+                    Country<input type="text" name="country" value="<%= list.country %>" class="form-control" required>
+                    <div class="invalid-feedback">Please Enter country</div>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn">Edit</button>
+            </form>
+        </div>
+    </div>
